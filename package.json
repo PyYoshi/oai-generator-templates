@@ -1,0 +1,19 @@
+{
+  "name": "oai-generator-templates",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "PyYoshi",
+  "license": "MIT",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.1.18",
+    "cross-fetch": "^3.0.6",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "swr": "^0.4.0",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "clean-example-typescript-swr": "rimraf ./examples/typescript-swr && mkdirp ./examples/typescript-swr ",
+    "generate-example-typescript-swr": "yarn run clean-example-typescript-swr && openapi-generator-cli generate -i ./examples/yamls/pet.yaml -o ./examples/typescript-swr -t ./templates/typescript-swr -g typescript-fetch -p typescriptThreePlus=true -p modelPropertyNaming=original -p supportsES6=true -p withInterfaces=true"
+  }
+}
